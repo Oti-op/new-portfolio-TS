@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oti Oseji</title>
+  <script>
+    (function () {
+      var t = localStorage.getItem('theme') || 'system';
+      var pd = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (t === 'dark' || (t === 'system' && pd)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    })();
+  </script>
+  <script>tailwind = { config: { darkMode: 'class' } }</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * { -webkit-font-smoothing: antialiased; }
+
+    .fade-section {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fade-section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card-arrow {
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    .project-card:hover .card-arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .theme-btn-active {
+      background-color: rgba(0, 0, 0, 0.08);
+    }
+    html.dark .theme-btn-active {
+      background-color: rgba(255, 255, 255, 0.08);
+    }
+  </style>
+</head>
+<body class="bg-white dark:bg-[#111] text-neutral-900 dark:text-neutral-100 min-h-screen">
+
+  <div id="top" class="max-w-[640px] mx-auto px-5 py-12">
+
+    <!-- Avatar -->
+    <div class="mb-8 fade-section">
+      <div class="w-32 h-32 rounded-lg border border-black/15 dark:border-white/20 bg-black/[0.03] dark:bg-white/[0.03] flex items-center justify-center font-mono text-xl font-bold tracking-widest select-none text-neutral-400 dark:text-neutral-500">
+        OO
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="flex items-center justify-between mb-16 fade-section">
+      <a href="index.html" class="font-semibold text-sm underline underline-offset-[3px] decoration-black/40 dark:decoration-white/40 hover:decoration-black dark:hover:decoration-white transition-all">
+        Oti Oseji
+      </a>
+      <nav class="flex items-center gap-1.5 text-sm">
+        <a href="index.html" class="underline underline-offset-[3px] decoration-[1.5px] font-medium">about</a>
+        <span class="text-neutral-300 dark:text-neutral-600">/</span>
+        <a href="projects.html" class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">projects</a>
+        <span class="text-neutral-300 dark:text-neutral-600">/</span>
+        <a href="blog.html" class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">blog</a>
+        <span class="text-neutral-300 dark:text-neutral-600">/</span>
+        <a href="cv.html" class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">cv</a>
+      </nav>
+    </header>
+
+    <!-- Main -->
+    <main class="space-y-12">
+
+      <!-- Intro -->
+      <section class="fade-section">
+        <h1 class="text-2xl font-semibold mb-4">Hello!</h1>
+        <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed text-sm">
+          I'm a first-year Computer Science (AI) student at the University of Plymouth, interested in artificial intelligence, full-stack development, and systems programming.
+        </p>
+      </section>
+
+      <!-- Currently -->
+      <section class="fade-section">
+        <ul class="space-y-2.5">
+          <li class="flex gap-3 text-sm">
+            <span class="text-neutral-300 dark:text-neutral-600 shrink-0 mt-px select-none">—</span>
+            <span class="text-neutral-600 dark:text-neutral-400">Chair &amp; Workshop Lead of <span class="text-neutral-900 dark:text-neutral-100 font-medium">Plymouth CompSoc</span></span>
+          </li>
+          <li class="flex gap-3 text-sm">
+            <span class="text-neutral-300 dark:text-neutral-600 shrink-0 mt-px select-none">—</span>
+            <span class="text-neutral-600 dark:text-neutral-400">AI &amp; Cyber Risk Research Intern at <span class="text-neutral-900 dark:text-neutral-100 font-medium">E3 Consulting</span></span>
+          </li>
+          <li class="flex gap-3 text-sm">
+            <span class="text-neutral-300 dark:text-neutral-600 shrink-0 mt-px select-none">—</span>
+            <span class="text-neutral-600 dark:text-neutral-400">Building <span class="text-neutral-900 dark:text-neutral-100 font-medium">O-Planner</span>, a MERN stack task manager deployed to Azure</span>
+          </li>
+          <li class="flex gap-3 text-sm">
+            <span class="text-neutral-300 dark:text-neutral-600 shrink-0 mt-px select-none">—</span>
+            <span class="text-neutral-600 dark:text-neutral-400">Building a <span class="text-neutral-900 dark:text-neutral-100 font-medium">Raspberry Pi IoT dashboard</span> with GPS and temperature sensors</span>
+          </li>
+          <li class="flex gap-3 text-sm">
+            <span class="text-neutral-300 dark:text-neutral-600 shrink-0 mt-px select-none">—</span>
+            <span class="text-neutral-600 dark:text-neutral-400">Azure Fundamentals certified, pursuing further certifications</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Recent projects -->
+      <section class="fade-section">
+        <div class="flex items-baseline justify-between mb-4">
+          <h2 class="font-semibold text-sm">Recent projects</h2>
+          <a href="projects.html" class="text-xs text-neutral-500 dark:text-neutral-400 underline underline-offset-[3px] hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
+            See all projects →
+          </a>
+        </div>
+        <div class="space-y-2.5">
+
+          <a href="projects.html" class="project-card block border border-black/12 dark:border-white/[0.12] rounded-lg p-4 hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-colors">
+            <div class="flex items-center gap-2 mb-1.5">
+              <h3 class="font-semibold text-sm">O-Planner</h3>
+              <span class="card-arrow text-neutral-400 dark:text-neutral-500 text-xs leading-none">→</span>
+            </div>
+            <p class="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed">
+              MERN stack task management app with Azure App Service deployment and MongoDB Atlas.
+            </p>
+          </a>
+
+          <a href="projects.html" class="project-card block border border-black/12 dark:border-white/[0.12] rounded-lg p-4 hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-colors">
+            <div class="flex items-center gap-2 mb-1.5">
+              <h3 class="font-semibold text-sm">Raspberry Pi IoT Dashboard</h3>
+              <span class="card-arrow text-neutral-400 dark:text-neutral-500 text-xs leading-none">→</span>
+            </div>
+            <p class="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed">
+              Real-time temperature and GPS data visualised via FastAPI, DS18B20 sensor and GT-U7 GPS module.
+            </p>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- Let's connect -->
+      <section class="fade-section">
+        <h2 class="font-semibold text-sm mb-3">Let's connect</h2>
+        <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+          I'm always happy to chat about projects, ideas, or opportunities. Find me on
+          <a href="https://github.com/Oti-op" target="_blank" rel="noopener noreferrer" class="text-neutral-900 dark:text-neutral-100 underline underline-offset-[3px] hover:decoration-[1.5px] transition-all">GitHub</a>
+          &nbsp;/&nbsp;
+          <a href="https://www.linkedin.com/in/otitechukwuka-oseji/" target="_blank" rel="noopener noreferrer" class="text-neutral-900 dark:text-neutral-100 underline underline-offset-[3px] hover:decoration-[1.5px] transition-all">LinkedIn</a>
+          &nbsp;/&nbsp;or send me an
+          <a href="mailto:otiteos49@gmail.com" class="text-neutral-900 dark:text-neutral-100 underline underline-offset-[3px] hover:decoration-[1.5px] transition-all">email</a>.
+        </p>
+      </section>
+
+    </main>
+
+    <!-- Back to top -->
+    <div class="flex justify-end mt-16 mb-5 fade-section">
+      <a href="#top" class="text-xs text-neutral-400 dark:text-neutral-500 underline underline-offset-[3px] hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
+        Back to top ↑
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="flex items-center justify-between pt-4 border-t border-black/10 dark:border-white/[0.08] fade-section">
+      <p class="text-xs text-neutral-400 dark:text-neutral-500">
+        &copy; Oti Oseji &middot; Last updated May 2025
+      </p>
+      <div class="flex items-center gap-1">
+        <button id="btn-light" onclick="setTheme('light')" title="Light mode"
+          class="w-7 h-7 rounded border border-black/12 dark:border-white/[0.12] text-[11px] hover:bg-black/5 dark:hover:bg-white/5 transition-colors flex items-center justify-center leading-none">
+          ☀
+        </button>
+        <button id="btn-system" onclick="setTheme('system')" title="System default"
+          class="w-7 h-7 rounded border border-black/12 dark:border-white/[0.12] text-[11px] hover:bg-black/5 dark:hover:bg-white/5 transition-colors flex items-center justify-center leading-none">
+          ◑
+        </button>
+        <button id="btn-dark" onclick="setTheme('dark')" title="Dark mode"
+          class="w-7 h-7 rounded border border-black/12 dark:border-white/[0.12] text-[11px] hover:bg-black/5 dark:hover:bg-white/5 transition-colors flex items-center justify-center leading-none">
+          ☾
+        </button>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    function setTheme(t) {
+      localStorage.setItem('theme', t);
+      var pd = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (t === 'dark' || (t === 'system' && pd)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      updateThemeButtons(t);
+    }
+
+    function updateThemeButtons(t) {
+      ['light', 'system', 'dark'].forEach(function (id) {
+        var btn = document.getElementById('btn-' + id);
+        if (btn) btn.classList.toggle('theme-btn-active', id === t);
+      });
+    }
+
+    updateThemeButtons(localStorage.getItem('theme') || 'system');
+
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.fade-section').forEach(function (el, i) {
+        setTimeout(function () { el.classList.add('show'); }, i * 100);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+/* Custom styles for Oti's Portfolio */
+
+/* Base styles */
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9fafb; /* Light background */
+    color: #1f2937; /* Dark text */
+}
+
+/* Header styles */
+header {
+    background-color: #ffffff; /* White background for header */
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #1f2937;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #3b82f6; /* Blue on hover */
+}
+
+/* Main content styles */
+main {
+    padding: 2rem;
+}
+
+/* Section styles */
+section {
+    margin-bottom: 2rem;
+}
+
+/* Avatar styles */
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Project card styles */
+.project-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb; /* Light border */
+    border-radius: 0.5rem;
+    padding: 1rem;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode styles */
+body.dark {
+    background-color: #1f2937; /* Dark background */
+    color: #f9fafb; /* Light text */
+}
+
+body.dark header,
+body.dark footer {
+    background-color: #374151; /* Dark header/footer */
+}
+
+body.dark nav a {
+    color: #f9fafb; /* Light text for links */
+}
+
+body.dark nav a:hover {
+    color: #60a5fa; /* Light blue on hover */
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
